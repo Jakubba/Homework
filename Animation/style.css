@@ -1,0 +1,458 @@
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    background-color: #333333;
+    background: linear-gradient(to top, #262626 0%,#333333 100%);
+    height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.me {
+    position: absolute;
+    width: 640px;
+    height: 426px;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    overflow: hidden;
+}
+
+.me.isSquiggle {
+    animation: squiggly-anim 0.3s infinite;
+}
+
+.me_refshow:before {
+    opacity: 1;
+}
+
+.me_toonshow .head {
+    opacity: 0.5;
+}
+
+.me_toonshow .shirt {
+    opacity: 0.25;
+}
+
+$COLOR_SKIN: #dfa588;
+$COLOR_HAIR: #614A34;
+$COLOR_SHIRT: rgba(#6B1C1C, 1);
+$COLOR_BROW: lighten($COLOR_HAIR, 5%);
+$COLOR_BEARD: darken($COLOR_HAIR, 3%);
+
+$Z_EARS: 0;
+$Z_HAIR: 1;
+$Z_EYES: 2;
+$Z_MOUTH: 3;
+
+.head, .ear, .jaw {
+    position: absolute;
+}
+
+@mixin skin() {
+    background-color: rgba($COLOR_SKIN, 1);
+}
+
+.shirt {
+    position: absolute;
+    bottom: -20px;
+    left: 106px;
+    width: 400px;
+    height: 158px;
+    background-color: $COLOR_SHIRT;
+    border-radius: 200px 250px 0px 0px / 61px 42px 0px 0px;
+}
+
+.shirt-sleeve-left {
+    position: absolute;
+    bottom: 0;
+    left: -43px;
+    width: 80px;
+    height: 148px;
+    background-color: $COLOR_SHIRT;
+    border-radius: 26px 0px 0px 0px / 111px 0px 0px 0px;
+    transform: translate(0, 28px) rotate(23deg);
+}
+
+.shirt-sleeve-right {
+    position: absolute;
+    bottom: 0;
+    right: -49px;
+    width: 80px;
+    height: 148px;
+    background-color: $COLOR_SHIRT;
+    border-radius: 0px 26px 0px 0px / 0px 111px 0px 0px;
+    transform: translate(0, 23px) rotate(-23deg);
+}
+
+.shirt-neck {
+    position: absolute;
+    top: 0;
+    left: 155px;
+    width: 116px;
+    height: 86px;
+    background-color: lighten($COLOR_SHIRT, 3%);
+    border-radius: 52px;
+    border: 2px solid rgba(black, 0.1);
+}
+
+.neck {
+    position: absolute;
+    bottom: 67px;
+    left: 269px;
+    width: 100px;
+    height: 80px;
+    background-color: darken($COLOR_SKIN, 5%);
+    border-radius: 44px;
+    border-right: 4px solid darken($COLOR_SKIN, 10%);
+    border-bottom: 4px solid darken($COLOR_SKIN, 10%);
+    border-left: 4px solid darken($COLOR_SKIN, 10%);
+}
+
+.head {
+    top: 44px;
+    left: 236px;
+    width: 169px;
+    height: 289px;
+    @include skin();
+    border-radius: 84px 84px 84px 84px / 82px 82px 150px 150px;
+    transition: opacity 250ms linear;
+    transform-origin: 50% 90%;
+    transform: rotate(0deg);
+    animation: swayhead 10s cubic-bezier(0.86, 0, 0.07, 1) alternate infinite;
+}
+
+.hair {
+    position: absolute;
+    top: -6px;
+    left: -6px;
+    width: 181px;
+    height: 121px;
+    background-color: rgba($COLOR_HAIR, 1);
+    border-radius: 84px 84px 8px 8px / 82px 82px 34px 34px;
+    z-index: $Z_HAIR;
+}
+
+.hair:after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    bottom: -1px;
+    left: 10px;
+    @include skin();
+    border-radius: 84px 84px 4px 4px / 82px 82px 20px 20px;
+}
+
+.hair-top {
+    position: absolute;
+    top: 3px;
+    left: 54px;
+    width: 72px;
+    height: 34px;
+    background-color: $COLOR_HAIR;
+    border-radius: 30px 30px 30px 30px / 12px 12px 20px 20px;
+    z-index: $Z_HAIR;
+}
+
+.hair-sideburns {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 10px;
+    // background-color: rgba(red, 0.25);
+    z-index: $Z_HAIR;
+    &:before, &:after {
+        content: '';
+        position: absolute;
+        top: 8px;
+        width: 5px;
+        height: 30px;
+        background-color: $COLOR_HAIR;
+        border-radius: 3px 3px 3px 3px / 3px 3px 3px 3px;
+    }
+    &:before {
+        left: 7px;
+    }
+    &:after {
+        right: 7px;
+    }
+}
+
+.jaw {
+    bottom: 14px;
+    left: -3px;
+    @include skin();
+    width: 175px;
+    height: 140px;
+    border-radius: 8px 8px 89px 89px / 28px 28px 120px 120px;
+}
+
+.beard {
+    position: absolute;
+    top: 141px;
+    left: -7px;
+    background-color: $COLOR_BEARD;
+    width: 184px;
+    height: 156px;
+    border-radius: 9px 10px 79px 79px / 28px 28px 120px 120px;
+}
+
+.beard:before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 13px;
+    width: 157px;
+    height: 92px;
+    @include skin();
+    border-radius: 0px 0px 40px 40px / 0px 0px 70px 70px;
+}
+
+.beard-stash {
+    position: absolute;
+    top: 40px;
+    left: 36px;
+    width: 112px;
+    height: 90px;
+    background-color: $COLOR_BEARD;
+    border-radius: 50px 50px 40px 40px / 20px 20px 80px 80px;
+    z-index: $Z_HAIR;
+}
+
+.beard-stash-mouth {
+    position: absolute;
+    top: 11px;
+    left: 13px;
+    width: 86px;
+    height: 73px;
+    @include skin();
+    border-radius: 30px 30px 30px 30px / 10px 10px 60px 60px;
+}
+
+.beard-stash-mouth:after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 30px;
+    width: 28px;
+    height: 30px;
+    background-color: $COLOR_BEARD;
+    border-radius: 6px 6px 0px 0px / 30px 30px 0px 0px;
+}
+
+.nose {
+    position: absolute;
+    bottom: 111px;
+    left: 67px;
+    width: 38px;
+    height: 15px;
+    background-color: $COLOR_SKIN;
+    border-bottom: 4px solid darken($COLOR_SKIN, 10%);
+    border-radius: 50%;
+    z-index: $Z_MOUTH;
+}
+
+.mouth-teeth {
+    position: absolute;
+    bottom: 70px;
+    left: 50px;
+    width: 69px;
+    height: 20px;
+    border-top: 2px solid darken(white, 10%);
+    border-bottom: 4px solid darken(white, 10%);
+    background-color: white;
+    border-radius: 20px 20px 34px 34px / 3px 3px 17px 17px;
+    box-shadow: 0 4px 0 rgba(black, 0.05), 0 -2px 0 rgba(black, 0.05);
+    z-index: $Z_MOUTH;
+}
+
+.mouth-teeth:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 6px;
+    left: 6px;
+    height: 1px;
+    background-color: darken(white, 10%);
+    border-radius: 50%;
+}
+
+.mouth-lip {
+    position: absolute;
+    bottom: 59px;
+    left: 67px;
+    width: 38px;
+    height: 8px;
+    background-color: $COLOR_SKIN;
+    border-bottom: 2px solid darken($COLOR_SKIN, 8%);
+    border-radius: 50%;
+    z-index: $Z_MOUTH;
+}
+
+.eye {
+    position: absolute;
+    top: 126px;
+    left: 0;
+    right: 0;
+    background-color: red;
+    z-index: $Z_EYES;
+}
+
+.eye-left,
+.eye-right {
+    position: absolute;
+    top: 0;
+    width: 10px;
+    background-color: rgba(black, 0.25);
+}
+
+.eye-left {
+    left: 42px;
+}
+
+.eye-right {
+    right: 42px;
+}
+
+.eye-left-ball,
+.eye-right-ball {
+    position: absolute;
+    top: 0;
+    width: 10px;
+    height: 14px;
+    background-color: rgba(black, 1);
+    border-radius: 5px 5px 5px 5px / 8px 8px 5px 5px;
+    animation: look 10s linear infinite alternate;
+}
+
+.eye-left-brow,
+.eye-right-brow {
+    position: absolute;
+    top: -16px;
+    width: 29px;
+    height: 6px;
+    background-color: $COLOR_BROW;
+    border-radius: 0px 0px 0px 0px / 0px 0px 0px 0px;
+}
+
+.eye-left-brow {
+    left: -16px;
+    border-radius: 5px 12px 12px 5px / 3px 3px 3px 3px;
+    transform: rotate(-5deg);
+}
+
+.eye-right-brow {
+    right: -16px;
+    border-radius: 12px 5px 5px 12px / 3px 3px 3px 3px;
+    transform: rotate(5deg);
+}
+
+.ear {
+    top: 110px;
+    right: 0;
+    left: 0;
+    width: 100%;
+    background-color: red;
+    z-index: $Z_EARS;
+}
+
+.ear > * {
+    position: absolute;
+    top: 0;
+    width: 20px;
+    height: 26px;
+    @include skin();
+}
+
+.ear-left {
+    top: 0;
+    left: -8px;
+    border-radius: 5px 0px 0px 20px / 5px 0px 0px 14px;
+}
+
+.ear-left:after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 3px;
+    width: 16px;
+    height: 26px;
+    @include skin();
+    border-radius: 16px 0px 0px 5px / 23px 0px 0px 5px
+}
+
+.ear-right {
+    top: 0;
+    right: -8px;
+    border-radius: 0px 5px 20px 0px / 0px 5px 14px 0px;
+}
+
+.ear-right:after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    width: 16px;
+    height: 26px;
+    @include skin();
+    border-radius: 0px 18px 5px 0px / 0px 27px 4px 0px;
+}
+
+@keyframes look {
+    0% {
+        transform: scale(1, 1) translateX(-3px);
+    }
+    49.5% {
+        transform: scale(1, 1) translateX(-3px);
+    }
+    50% {
+        transform: scale(1, 0.1) translateX(0px);
+    }
+    50.5% {
+        transform: scale(1, 1) translateX(3px);
+    }
+    100% {
+        transform: scale(1, 1) translateX(3px);
+    }
+}
+
+@keyframes swayhead {
+    0% {
+        transform: rotate(-3deg);
+    }
+    45% {
+        transform: rotate(-3deg);
+    }
+    55% {
+        transform: rotate(3deg);
+    }
+    100% {
+        transform: rotate(3deg);
+    }
+}
+
+@keyframes squiggly-anim {
+    0% {
+        filter: url('#squiggly-0');
+    }
+    25% {
+        filter: url('#squiggly-1');
+    }
+    50% {
+        filter: url('#squiggly-2');
+    }
+    75% {
+        filter: url('#squiggly-3');
+    }
+    100% {
+        filter: url('#squiggly-4');
+    }
+}
