@@ -7,6 +7,7 @@
 body{
     display: flex;
     justify-content: center;
+    align-items: center;
     text-align: center;
     width: 100vw;
     height: 100vh;
@@ -46,9 +47,11 @@ blockquote::after{
     width: 210px;
     background:   rgb(85, 100, 148);
     position: absolute;
-    top: 0;
-    right: 122px;
-    box-shadow: 0 290px  rgb(85, 100, 148);
+    top: 36.6%;
+    left: 50% ;
+    right: 50%;
+    transform: translate(-50%,-50%);
+    box-shadow: 0 290px rgb(85, 100, 148);
 }
 .pseudo-elements::after{
     border: none;
@@ -56,9 +59,12 @@ blockquote::after{
     width: 10px;
     background:   rgb(85, 100, 148);
     position: absolute;
-    top: 30px;
-    left: 92px;
-    box-shadow: 260px 0px  rgb(85, 100, 148);
+    top: 50% ;
+    bottom: 50%;
+    left: 43.25%;
+    right: 50%;
+    transform: translate(-50%,-50%);
+    box-shadow: 260px 0px rgb(85, 100, 148);
 }
 .pseudo-elements{
     display: flex;
