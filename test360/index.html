@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Test 360</title>
+    <!-- <meta name="viewport" content="initial-scale=1.0, width=device-width"/> -->
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+<body>
+  <div id="product_viewer"></div>
+  <script src="js/product-viewer.js"></script>
+  <script>
+    let productViewer = new ProductViewer ({
+      element: document.getElementById('product_viewer'),
+      imagePath: './images',
+      filePrefix: 'img',
+      fileExtension: '.jpg'
+    });
+    ProductViewer.once('loaded', function (){
+      ProductViewer.animate360();
+    })
+
+  </script>
+
+    
+</body>
+</html>
