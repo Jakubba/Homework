@@ -1,0 +1,43 @@
+:root{
+    --eye-color-primary:  rgb(0, 0, 0);
+    --eye-color-secondary:  rgb(145, 61, 61);
+    --background-color: black;
+}
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+}
+.eyes{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    text-align: center;
+}
+.eye{
+    width: 240px;
+    height: 120px;
+    background-color: white;
+    display:inline-block;
+    margin:40px;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+}
+.ball{
+    width:40px;
+    height: 40px;
+    background-color: var(--eye-color-primary);
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    border-radius: 50%;
+    border: 7px solid var(--eye-color-secondary);
+}
