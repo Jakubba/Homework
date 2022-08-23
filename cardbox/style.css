@@ -1,0 +1,114 @@
+:root{
+    --background-color-page:#edb7c3;
+    --background-color-card:#fefefe;
+    --text-color:#515859;
+    --ribbon-color-first:#ff3964;
+    --ribbon-color-second:#fd597f;
+    --text-price-color:#fe3865;
+    --button-color:#fc3a63;
+    ---font--page: 'Poppins', sans-serif;
+    --shadow--card: rgba(0,0,0,0.1);
+}
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--background-color-page);
+    font-family: var(---font--page);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.card{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    position: absolute;
+    min-height: 500px;
+    width: 500px;
+    background-color: var(--background-color-card);
+    box-shadow: 0 0 15px var(--shadow--card);
+    border-radius: 20px;
+    color: var(--text-color);
+    padding: 60px;
+}
+.card__text__tittle{
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    font-weight: 800;
+}
+.card__text__price{
+    font-size:1.4rem ;
+    margin-bottom:20px;
+    font-weight: 600;
+}
+.price{
+    font-size: 4.4rem;
+    margin-bottom: 20px;
+    font-weight: 600;
+    color: var(--text-price-color);
+}
+.card__text__info--first{
+    margin-bottom: 20px;
+    font-weight: 600;
+    display: block;
+}
+.card__text__info--second{
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+}
+.card__button{
+    display: block;
+    margin: 30px auto;
+    border: 0;
+    outline: 0;
+    background-color: var(--button-color);
+    color:#fff;
+    font-weight: 700;
+    padding: 12px 40px;
+    border-radius: 30px;
+    box-shadow: 0 10px 10px rgba(0,0,0,0.1);
+    cursor: pointer;
+}
+.ribbon-wrap{
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    position: absolute;
+    top: -10px;
+    left: -10px;
+}
+.ribbon-wrap::before,.ribbon-wrap::after{
+    content: "";
+    width: 10px;
+    height: 10px;
+    background-color: var(--ribbon-color-second);
+    position: absolute;
+    z-index: -1;
+}
+.ribbon-wrap::before{
+    top: 0;
+    right: 0;
+}
+.ribbon-wrap::after{
+    bottom:0;
+    left:0;
+}
+.ribbon{
+    background-color: var(--ribbon-color-first);
+    color: #fff;
+    font-size: 0.8rem;
+    width: 225px;
+    text-align: center;
+    padding: 8px 0;
+    position: absolute;
+    transform: rotate(-45deg);
+    bottom:50%;
+    right:-20%;
+}
