@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <form action="" class="form-group" id="Form1">
+            <h2>CREATE ACCOUNT</h2>
+            <input type="text" placeholder="Email" required>
+            <input type="password" placeholder="Password" required>
+            <input type="password" placeholder="Confirm Password" required>
+            <div class="btn-box">
+                <button type="button" id="Next1">NEXT</button>
+            </div>
+        </form>
+        <form action="" class="form-group" id="Form2">
+            <h2>SOCIAL LINKS</h2>
+            <input type="text" placeholder="Medium">
+            <input type="text" placeholder="Github">
+            <input type="text" placeholder="Linkedin">
+            <div class="btn-box">
+                <button type="button" id="Back1">BACK</button>
+                <button type="button" id="Next2">NEXT</button>
+            </div>
+        </form>
+        <form action="" class="form-group" id="Form3">
+            <h2>PERSONAL INFO</h2>
+            <input type="text" placeholder="First Name">
+            <input type="text" placeholder="Last Name">
+            <input type="text" placeholder="Mobile Number">
+            <div class="btn-box">
+                <button type="button" id="Back2">BACK</button>
+                <button type="submit">SUBMIT</button>
+            </div>
+        </form>
+        <div class="step-row">
+            <div id="progress"></div>
+            <div class="step-col"><small>STEP 1</small></div>
+            <div class="step-col"><small>STEP 2</small></div>
+            <div class="step-col"><small>STEP 3</small></div>
+        </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>
