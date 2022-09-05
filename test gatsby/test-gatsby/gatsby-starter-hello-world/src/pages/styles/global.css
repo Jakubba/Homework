@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    color: #fff;
+}
+html, body{
+    min-height: 100%;
+}
+body{
+    background: radial-gradient(at top left, rgba(146,42,224,1) 0%, rgba(43,9,107,1) 100%);
+    background-repeat: no-repeat;
+}
+p{
+    margin: 16px auto;
+    line-height: 1.5rem;
+}
+.layout{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 40px auto;
+}
+nav .links{
+    display: inline-block;
+    text-align: right;
+}
