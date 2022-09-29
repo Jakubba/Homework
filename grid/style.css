@@ -1,0 +1,10 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+div ~ p {
+    color: red;
+    font-size: 5rem;
+}
