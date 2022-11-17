@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://unpkg.com/wavesurfer.js"></script>
+
+    <title>MusicWave</title>
+  </head>
+  <body>
+    <div class="hero">
+      <div class="music">
+        <img src="media/Arctic_monkeys.jpg" alt="album arctic monkeys" />
+        <div class="info">
+          <h1>Arctic Monkeys - Snap Out Of It</h1>
+          <p>Album Easy Girls</p>
+          <!-- <audio controls>
+                    <source src="./media/Arctic Monkeys - Snap Out Of It.mp3" type="audio/mp3">
+                </audio> -->
+          <!-- I use wavesurfer.js  -->
+          <div id="waveform"></div>
+          <div class="controls">
+            <img src="./media/play.png" id="btnPlay" />
+            <img src="./media/stop.png" id="btnStop" />
+            <img src="./media/volume.png" id="btnVolume" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
