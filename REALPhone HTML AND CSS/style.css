@@ -1,0 +1,132 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  justify-content: center;
+  font-family: sans-serif;
+}
+header {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(to right, #9c27b0, #8ecdff);
+}
+nav {
+  width: 80%;
+  position: sticky;
+  margin: 20px auto;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+}
+.logo {
+  flex-basis: 20%;
+}
+.logo img {
+  width: 150px;
+}
+.nav-links {
+  flex: 1;
+  text-align: right;
+}
+.nav-links ul li {
+  list-style: none;
+  display: inline-block;
+  margin: 0 20px;
+}
+.information {
+  width: 1000px;
+  height: 1000px;
+  position: absolute;
+  /* top: 50%; */
+  left: -10%;
+  transform: translateY(-50%);
+}
+#circle {
+  width: 900px;
+  height: 900px;
+  position: absolute;
+  top: 50%;
+  left: 40%;
+  border-radius: 50%;
+  background: #ccc;
+  transform: rotate(0deg);
+  transition: 1s;
+}
+.feature {
+  position: absolute;
+  display: flex;
+  color: #fff;
+}
+.feature div {
+  margin-left: 30px;
+}
+.feature div p {
+  margin-top: 8px;
+}
+.feature img {
+  width: 70px;
+}
+.one {
+  top: 400px;
+  right: 50px;
+}
+.two {
+  top: 100px;
+  left: 300px;
+}
+.three {
+  bottom: 400px;
+  left: 50px;
+}
+.four {
+  bottom: 100px;
+  right: 300px;
+}
+.mobile {
+  width: 200px;
+  position: absolute;
+  top: 95%;
+  left: 75%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+.controls {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  right: 10%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.controls h3 {
+  margin: 15px 0;
+  color: #fff;
+}
+#upBtn {
+  width: 15px;
+  cursor: pointer;
+}
+#downBtn {
+  width: 15px;
+  cursor: pointer;
+  rotate: 180deg;
+}
+.overlay{
+  width: 0;
+  height: 0;
+  border-top: 500px solid #fff;
+  border-right: 500px solid  transparent;
+  border-bottom: 500px solid  #fff;
+  border-left: 500px solid #fff;
+  position: absolute;
+  left:35%;
+  top:45%;
+  z-index: 1;
+}
