@@ -1,3 +1,3 @@
 # Homework
 
-Folder where I practicing or trying something.
+Folder where I'm practicing or trying something.
